@@ -1,0 +1,45 @@
+﻿@model WebViewContact.Models.Domain.Contacts
+@{
+}
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Get User By Id - Any User Functionality</h1>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <form method="post">
+            <label for="contactId">Enter Contact ID:</label>
+            <input type="text" id="contactId" name="id" />
+            <button type="submit">Search</button>
+        </form>
+
+        @if (Model != null && Model.Id != null)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>UserName</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Id</td>
+                        <td>@Model.UserName</td>
+                        <td>@Model.Email</td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+       @*  else
+        {
+            <p>No Contact Found</p>
+        } *@
+    </div>
+</div>
+
